@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace NMCT.Resto.Core
     {
         public override void Initialize()
         {
-            RegisterAppStart<ViewModels.TabInfoViewModel>();
+            CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
+
+            RegisterNavigationServiceAppStart<ViewModels.TabInfoViewModel>();
         }
     }
 }

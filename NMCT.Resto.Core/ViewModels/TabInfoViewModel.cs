@@ -1,4 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
+using NMCT.Resto.Core.Model;
+using NMCT.Resto.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +12,37 @@ namespace NMCT.Resto.Core.ViewModels
     public class TabInfoViewModel : MvxViewModel
     {
 
-        private string _name;
+        private string _name = "nmct";
 
         public string Name
         {
             get { return _name; }
-            set { _name = value; _name = "NMCT"; }
+            set { _name = value; RaisePropertyChanged(() => Name); }
+        }
+
+        private Restaurant _restaurantContent;
+
+        public Restaurant RestaurantContent
+        {
+            get { return _restaurantContent; }
+            set { _restaurantContent = value; RaisePropertyChanged(() => RestaurantContent); }
+        }
+
+
+        protected readonly IRestoDataService _restoDataService;
+
+        public TabInfoViewModel(IRestoDataService restoDataService)
+        {
+            this._restoDataService = restoDataService;
+
+            ChooseRandomRestaurant();
+        }
+
+        private async void ChooseRandomRestaurant()
+        {
+            RestaurantContent = await _restoDataService.GetRandomRestaurant();
+            RestaurantContent.Reviews = await _restoDataService.GetReviews();
+            RaisePropertyChanged(() => RestaurantContent);
         }
 
     }

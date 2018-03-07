@@ -16,13 +16,49 @@ namespace NMCT.Resto.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblAddress { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblCuisines { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblPriceRange { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblScore { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (lblAddress != null) {
+                lblAddress.Dispose ();
+                lblAddress = null;
+            }
+
+            if (lblCuisines != null) {
+                lblCuisines.Dispose ();
+                lblCuisines = null;
+            }
+
             if (lblName != null) {
                 lblName.Dispose ();
                 lblName = null;
+            }
+
+            if (lblPriceRange != null) {
+                lblPriceRange.Dispose ();
+                lblPriceRange = null;
+            }
+
+            if (lblScore != null) {
+                lblScore.Dispose ();
+                lblScore = null;
             }
         }
     }
