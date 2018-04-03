@@ -11,12 +11,26 @@ namespace NMCT.Resto.Core.Model
         public long TimeStampOfVisit { get; set; }
 
         /// <summary>
-        /// translates datetime to unix timestamp and vice versa
+        /// zet timestamp van het bezoek om naar echte datum & tijd, en vice versa
         /// </summary>
-        //public DateTime DateOfVisit
-        //{
-        //    get { return DateTimeOffset.FromUnixTimeSeconds(TimeStampOfVisit).ToLocalTime().UtcDateTime; }
-        //    set { TimeStampOfVisit = ((DateTimeOffset)DateTime.SpecifyKind(value, DateTimeKind.Local)).ToUnixTimeSeconds(); }
-        //}
+        public DateTime DateOfVisit
+        {
+            get { return UnixTimestampToDateTime(TimeStampOfVisit); }
+            set { TimeStampOfVisit = DateTimeToUnixTimestamp(value); }
+        }
+
+        private DateTime UnixTimestampToDateTime(long unixTime)
+        {
+            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            long unixTimeStampInTicks = (long)(unixTime * TimeSpan.TicksPerSecond);
+            return new DateTime(unixStart.Ticks + unixTimeStampInTicks, System.DateTimeKind.Utc);
+        }
+
+        private long DateTimeToUnixTimestamp(DateTime dateTime)
+        {
+            DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            long unixTimeStampInTicks = (dateTime.ToUniversalTime() - unixStart).Ticks;
+            return unixTimeStampInTicks / TimeSpan.TicksPerSecond;
+        }
     }
 }

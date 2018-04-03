@@ -7,6 +7,7 @@ using Foundation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
 using MvvmCross.iOS.Views.Presenters;
+using NMCT.Resto.Core.Services;
 using UIKit;
 
 namespace NMCT.Resto.iOS

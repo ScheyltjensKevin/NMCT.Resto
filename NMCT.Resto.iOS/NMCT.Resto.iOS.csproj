@@ -59,6 +59,8 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Converters\ScoreToColorConverter.cs" />
+    <Compile Include="Converters\StringToImageConverter.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="GettingStarted.Xamarin" />

@@ -41,7 +41,7 @@ namespace NMCT.Resto.Core.ViewModels
         private async void ChooseRandomRestaurant()
         {
             RestaurantContent = await _restoDataService.GetRandomRestaurant();
-            RestaurantContent.Reviews = await _restoDataService.GetReviews();
+            RestaurantContent.Reviews = await _restoDataService.GetReviews(RestaurantContent.Id);
             RaisePropertyChanged(() => RestaurantContent);
         }
 

@@ -11,13 +11,27 @@ namespace NMCT.Resto.Core.Model
         public string Cuisines { get; set; }
         public int PriceRange { get; set; }
 
+        public string PriceRangeString
+        {
+            get
+            {
+                string result ="";
+                for (int i = 0; i <= PriceRange; i++)
+                {
+                    result += "$";
+                }
+                return result;
+            }
+        }
+
         public string ImageUrl { get; set; }
         public string ThumbUrl { get; set; }
 
         public Location Location { get; set; }
 
         public List<Review> Reviews { get; set; }
-        public double Score {
+        public double Score
+        {
             get { return Reviews == null ? double.NaN : Math.Round(Reviews.Average(rev => rev.Score), 1); }
         }
     }

@@ -25,10 +25,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="462" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="58" y="320" width="42" height="21"/>
+                                <rect key="frame" x="143" y="358" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="1270" firstItem="462" firstAttribute="height" constant="21"/>
+                                </constraints>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="463" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="58" y="427" width="42" height="21"/>
@@ -43,24 +46,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="465" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="143" y="349" width="42" height="21"/>
+                                <rect key="frame" x="58" y="320" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint id="1273" firstItem="465" firstAttribute="height" constant="21"/>
+                                </constraints>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="740" translatesAutoresizingMaskIntoConstraints="NO" ambiguous="YES" misplaced="YES">
+                                <rect key="frame" x="0.0" y="20" width="414" height="270"/>
+                            </imageView>
                         </subviews>
                         <constraints>
-                            <constraint id="471" firstItem="462" firstAttribute="leading" secondItem="230" secondAttribute="leadingMargin" constant="38"/>
                             <constraint id="472" firstItem="233" firstAttribute="leading" secondItem="230" secondAttribute="leadingMargin" constant="123"/>
-                            <constraint id="473" firstItem="465" firstAttribute="leading" secondItem="230" secondAttribute="leadingMargin" constant="123"/>
                             <constraint id="474" firstItem="464" firstAttribute="leading" secondItem="230" secondAttribute="leadingMargin" constant="166"/>
                             <constraint id="475" firstItem="464" firstAttribute="top" secondItem="226" secondAttribute="bottom" constant="222"/>
                             <constraint id="476" firstItem="233" firstAttribute="top" secondItem="226" secondAttribute="bottom" constant="300"/>
-                            <constraint id="477" firstItem="462" firstAttribute="top" secondItem="226" secondAttribute="bottom" constant="300"/>
-                            <constraint id="478" firstItem="465" firstAttribute="top" secondItem="233" secondAttribute="bottom" constant="8"/>
-                            <constraint id="479" firstItem="465" firstAttribute="top" secondItem="226" secondAttribute="bottom" constant="329"/>
                             <constraint id="480" firstItem="463" firstAttribute="top" secondItem="226" secondAttribute="bottom" constant="407"/>
                             <constraint id="481" firstItem="463" firstAttribute="leading" secondItem="230" secondAttribute="leadingMargin" constant="38"/>
+                            <constraint id="1264" firstItem="465" firstAttribute="leading" secondItem="230" secondAttribute="leadingMargin" constant="38"/>
+                            <constraint id="1267" firstItem="465" firstAttribute="top" secondItem="740" secondAttribute="bottom" constant="30"/>
+                            <constraint id="1268" firstItem="462" firstAttribute="leading" secondItem="230" secondAttribute="leadingMargin" constant="123"/>
+                            <constraint id="1269" firstItem="462" firstAttribute="top" secondItem="740" secondAttribute="top" constant="338"/>
+                            <constraint id="1271" firstItem="462" firstAttribute="top" secondItem="233" secondAttribute="bottom" constant="17"/>
+                            <constraint id="1272" firstItem="465" firstAttribute="top" secondItem="740" secondAttribute="top" constant="300"/>
                         </constraints>
                     </view>
                     <connections>
@@ -69,6 +79,7 @@
                         <outlet property="lblCuisines" destination="464" id="name-outlet-464"/>
                         <outlet property="lblPriceRange" destination="462" id="name-outlet-462"/>
                         <outlet property="lblAddress" destination="463" id="name-outlet-463"/>
+                        <outlet property="imgResto" destination="740" id="name-outlet-740"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="231" userLabel="First Responder" sceneMemberID="firstResponder"/>

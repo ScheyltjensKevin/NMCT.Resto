@@ -14,8 +14,6 @@ namespace NMCT.Resto.iOS
     {
         // class-level declarations
 
-
-
         private UIWindow window;
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {

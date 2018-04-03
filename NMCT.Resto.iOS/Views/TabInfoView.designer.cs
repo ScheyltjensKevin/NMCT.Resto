@@ -16,6 +16,10 @@ namespace NMCT.Resto.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView imgResto { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblAddress { get; set; }
 
         [Outlet]
@@ -36,6 +40,11 @@ namespace NMCT.Resto.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (imgResto != null) {
+                imgResto.Dispose ();
+                imgResto = null;
+            }
+
             if (lblAddress != null) {
                 lblAddress.Dispose ();
                 lblAddress = null;

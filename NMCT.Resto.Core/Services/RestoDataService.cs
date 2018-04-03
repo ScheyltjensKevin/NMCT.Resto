@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NMCT.Resto.Core.Services
 {
-    public class RestoDataService
+    public class RestoDataService : IRestoDataService
     {
 
         private readonly IRestaurantRepository _restaurantRepository;
@@ -21,20 +21,20 @@ namespace NMCT.Resto.Core.Services
         }
 
 
-        public async Task<List<Restaurant>> GetRestaurants()
+        public async Task<List<Restaurant>> GetRestaurant()
         {
             return await _restaurantRepository.GetRestaurants();
         }
 
-        public async Task<List<Review>> GetReviews(Guid id)
+        public async Task<List<Review>> GetReviews(Guid restoId)
         {
-            return await _reviewRepository.GetReviews(id);
+            return await _reviewRepository.GetReviews(restoId);
         }
 
 
         public async Task<Restaurant> GetRandomRestaurant()
         {
-            List<Restaurant> listResto = await GetRestaurants();
+            List<Restaurant> listResto = await GetRestaurant();
 
             Random rnd = new Random();
             int randomNmbr = rnd.Next(0, listResto.Count - 1);
@@ -42,9 +42,9 @@ namespace NMCT.Resto.Core.Services
             return listResto[randomNmbr];
         }
 
-        public async void AddReview(Guid restoId, Review review)
+        public async Task<Guid> AddReview(Guid restoId, Review review)
         {
-            await _reviewRepository.PostReview(restoId, review);
+           return await _reviewRepository.PostReview(restoId, review);
         }
     }
 }

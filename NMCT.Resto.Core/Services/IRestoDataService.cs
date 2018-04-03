@@ -11,7 +11,7 @@ namespace NMCT.Resto.Core.Services
     {
         Task<List<Restaurant>> GetRestaurant();
         Task<Restaurant> GetRandomRestaurant();
-        Task<List<Review>> GetReviews();
-        Task<bool> AddReview(Guid restoId, Review review);
+        Task<List<Review>> GetReviews(Guid restoId);
+        Task<Guid> AddReview(Guid restoId, Review review);
     }
 }
